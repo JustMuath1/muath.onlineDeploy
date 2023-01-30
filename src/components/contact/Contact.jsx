@@ -2,7 +2,7 @@ import "./contact.css";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -94,7 +94,11 @@ const Contact = () => {
           <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form-div">
               <label className="contact__form-tag">Name</label>
-              <input
+              <motion.input
+                whileFocus={{
+                  borderColor: "var(--text-color-dark)",
+                  scale: 0.99,
+                }}
                 type="text"
                 name="name"
                 className="contact__form-input"
@@ -103,7 +107,11 @@ const Contact = () => {
             </div>
             <div className="contact__form-div">
               <label className="contact__form-tag">Email</label>
-              <input
+              <motion.input
+                whileFocus={{
+                  borderColor: "var(--text-color-dark)",
+                  scale: 0.99,
+                }}
                 type="email"
                 name="email"
                 className="contact__form-input"
@@ -112,7 +120,11 @@ const Contact = () => {
             </div>
             <div className="contact__form-div">
               <label className="contact__form-tag">Phone</label>
-              <input
+              <motion.input
+                whileFocus={{
+                  borderColor: "var(--text-color-dark)",
+                  scale: 0.99,
+                }}
                 type="tel"
                 name="mobile"
                 className="contact__form-input"
@@ -121,13 +133,17 @@ const Contact = () => {
             </div>
             <div className="contact__form-div contact__form-area">
               <label className="contact__form-tag">Message</label>
-              <textarea
+              <motion.textarea
+                whileFocus={{
+                  borderColor: "var(--text-color-dark)",
+                  scale: 0.99,
+                }}
                 name="message"
                 cols="30"
                 rows="10"
                 className="contact__form-input"
                 placeholder="Please Write Your Message"
-              ></textarea>
+              ></motion.textarea>
             </div>
             <button className="button button--flex">
               Send Message
