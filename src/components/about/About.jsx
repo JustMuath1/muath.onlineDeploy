@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./about.css";
 import AboutImg from "../../assets/Muath.JPG";
 import CV from "../../assets/MuathCV.pdf";
 import Info from "./Info";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  // Framer motion variables
   return (
-    <section className="about section" id="about">
+    <section
+      className="about section"
+      id="about"
+      ref={ref}
+      style={{
+        transform: isInView ? "none" : "translateX(200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+    >
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle">My introduction</span>
       <div className="about__container container grid">

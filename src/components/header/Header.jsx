@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./header.css";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const Header = () => {
   /**
    * Toggle Menu
    */
   const [Toggle, showMenu] = useState(false);
+  // Show menu state
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  // Framer motion variables
   return (
-    <header className="header">
+    <header
+      className="header"
+      ref={ref}
+      style={{
+        transform: isInView ? "none" : "translateX(-200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+    >
       <nav class="nav container">
         <motion.a
           whileHover={{ scale: 1.1 }}
