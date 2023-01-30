@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./services.css";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const [toggleState, setToggleState] = useState(0);
@@ -9,21 +9,8 @@ const Services = () => {
     setToggleState(index);
   };
 
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  // Framer motion variables
-
   return (
-    <section
-      className="services section"
-      id="services"
-      ref={ref}
-      style={{
-        transform: isInView ? "none" : "translateX(-200px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      }}
-    >
+    <section className="services section" id="services">
       <h2 className="section__title">Projects</h2>
       <span className="section__subtitle">Projects that I have built</span>
       <div className="services__container container grid">

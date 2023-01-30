@@ -2,14 +2,13 @@ import "./contact.css";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import { useInView } from "framer-motion";
-const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  // Framer motion variables
+import withReactContent from "sweetalert2-react-content";
 
-  // Email JS variables
+const MySwal = withReactContent(Swal);
+
+const Contact = () => {
   const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -41,16 +40,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <section
-      className="contact section"
-      id="contact"
-      ref={ref}
-      style={{
-        transform: isInView ? "none" : "translateX(-200px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      }}
-    >
+    <section className="contact section" id="contact">
       <h2 className="section__title">Keep In Touch</h2>
       <span className="section__subtitle">Contact Me</span>
       <div className="contact__container container grid">
@@ -83,7 +73,7 @@ const Contact = () => {
                 href="https://mobile.twitter.com/muath_online"
                 className="contact__button"
               >
-                Follow me{" "}
+                Write me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 // Import Swiper React components
 import "./testimonials.css";
 import { Data } from "./Data";
@@ -7,23 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  // Framer motion variables
   return (
-    <section
-      className="testimonial container section"
-      id="participating"
-      ref={ref}
-      style={{
-        transform: isInView ? "none" : "translateX(200px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      }}
-    >
+    <section className="testimonial container section" id="participating">
       <motion.h2 className="section__title">Participating</motion.h2>
       <span className="section__subtitle">
         Things that I have participate in
