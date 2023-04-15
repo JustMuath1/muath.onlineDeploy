@@ -50,7 +50,7 @@ const Footer = () => {
           </a>
         </div>
         <spn className="footer__copy">
-          &#169; Muath Al-Ghadmi. All right reserved
+          &#169; Muath Al-Ghamdi. All right reserved
         </spn>
       </div>
     </footer>
