@@ -36,13 +36,14 @@ const Testimonials = () => {
         modules={[Pagination]}
         className="mySwiper testimonial__container"
       >
-        {Data.map(({ id, image, title, description }) => {
+        {Data.map(({ id, image, title, description,tweet }) => {
           return (
             <SwiperSlide className="testimonial__card" key={id}>
               <motion.div whileTap={{ scale: 0.8 }}>
                 <img src={image} alt="" className="testimonial__img" />
                 <h3 className="testimonial__name">{title}</h3>
                 <p className="testimonial__description">{description}</p>
+                <div>{tweet}</div>
               </motion.div>
             </SwiperSlide>
           );
