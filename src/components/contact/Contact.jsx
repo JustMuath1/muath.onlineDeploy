@@ -68,7 +68,7 @@ const Contact = () => {
             <div className="contact__card">
               <i className="bx bxl-twitter contact__card-icon"></i>
               <h3 className="contact__card-title">Twitter</h3>
-              <span className="contact__card-data">@muath.online</span>
+              <span className="contact__card-data">@muath_online</span>
               <a
                 href="https://mobile.twitter.com/muath_online"
                 className="contact__button"
